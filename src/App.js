@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-
+import BlocT from './components/blocs/BlocT';
+import OccupationT from './components/occupations/OccupationT';
+import NavBar from './components/partials/NavBar';
+import { Routes, Route, Link } from "react-router-dom";
+import SalleT from './components/salles/SalleT';
+import ChronoT from './components/chronos/ChronoT';
 function App() {
   return (
+
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar></NavBar>
+      <div className='container mt-5'>
+        <Routes>
+          <Route path='/' element={<BlocT/>}/>
+          <Route element={BlocT}/>
+          <Route path='/occupation' element={<OccupationT/>}/>
+          <Route path='/salle' element={<SalleT/>}/>
+          <Route path='/chrono' element={<ChronoT/>}/>
+        </Routes>
+      </div>
+      
     </div>
+  
   );
 }
 
